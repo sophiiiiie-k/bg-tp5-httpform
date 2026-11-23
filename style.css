@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 16px;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 14px;
+    color: #1a1a2e;
+    background: linear-gradient(160deg, #1a1a2e, #16213e);
+    min-height: 100vh;
+}
+
+/* la carte blanche au centre */
+.page {
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* bandeau rouge du haut */
+.entete {
+    position: relative;
+    padding: 36px 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #e94560, #c62a47);
+}
+
+/* grand clap en filigrane à droite du bandeau (dessin SVG intégré) */
+.entete::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 170' preserveAspectRatio='xMaxYMid slice'%3E%3Cg fill='%23000' fill-opacity='.10'%3E%3Cpolygon points='30,18 250,-34 262,18 42,70'/%3E%3Crect x='46' y='52' width='230' height='140'/%3E%3C/g%3E%3Cg fill='%23fff' fill-opacity='.14'%3E%3Cpolygon points='68,12 98,5 112,24 82,31'/%3E%3Cpolygon points='122,-2 152,-9 166,10 136,17'/%3E%3Cpolygon points='176,-16 206,-23 220,-4 190,3'/%3E%3Cpolygon points='60,62 92,62 76,92 44,92'/%3E%3Cpolygon points='108,62 140,62 124,92 92,92'/%3E%3Cpolygon points='156,62 188,62 172,92 140,92'/%3E%3Cpolygon points='204,62 236,62 220,92 188,92'/%3E%3Crect x='46' y='118' width='230' height='8'/%3E%3C/g%3E%3C/svg%3E") no-repeat right top / auto 100%;
+    pointer-events: none;
+}
+
+.entete h1,
+.entete p {
+    position: relative;
+}
+
+.entete h1 {
+    margin: 0 0 8px;
+    font-size: 30px;
+}
+
+.entete p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.contenu {
+    padding: 24px;
+    background-color: #fafafa;
+}
+
+/* message jaune sous le bandeau */
+.info {
+    margin: 0 0 20px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: #5f4b00;
+    background-color: #fff6dc;
+    border-left: 4px solid #f0b429;
+    border-radius: 8px;
+}
+
+/* un bloc = une section du formulaire */
+.bloc {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: linear-gradient(180deg, white, #f6f7fb);
+    border-left: 4px solid #e94560;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.bloc h2 {
+    margin: 0 0 18px;
+    font-size: 17px;
+}
+
+/* champs */
+.champ {
+    margin-bottom: 16px;
+}
+
+.ligne {
+    display: flex;
+    gap: 16px;
+}
+
+.ligne .champ {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="month"],
+input[type="number"],
+input[type="search"],
+input[type="url"],
+input[type="week"],
+input[type="time"],
+input[type="datetime-local"],
+select,
+textarea {
+    width: 100%;
+    padding: 11px 12px;
+    font-family: inherit;
+    font-size: 13px;
+    background-color: white;
+    border: 2px solid #e4e6ee;
+    border-radius: 8px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #e94560;
+}
+
+textarea {
+    resize: vertical;
+}
+
+select[multiple] {
+    padding: 8px;
+}
+
+/* groupes de choix (radios et cases à cocher) */
+fieldset {
+    margin: 0 0 16px;
+    padding: 8px 14px 14px;
+    border: 2px solid #e4e6ee;
+    border-radius: 12px;
+}
+
+legend {
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #e94560;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 10px;
+    background: linear-gradient(90deg, #f6f7fb, white);
+    border-radius: 8px;
+}
+
+.option label {
+    margin: 0;
+    font-weight: 500;
+}
+
+.option input {
+    accent-color: #e94560;
+    width: 16px;
+    height: 16px;
+}
+
+/* curseur de fréquence */
+.curseur {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.curseur input {
+    flex: 1;
+    accent-color: #e94560;
+}
+
+.curseur output {
+    min-width: 46px;
+    padding: 6px 0;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    background-color: #e94560;
+    border-radius: 20px;
+}
+
+input[type="color"] {
+    width: 80px;
+    height: 40px;
+    padding: 3px;
+    border: 2px solid #e4e6ee;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* zones de dépôt de fichiers (on peut y glisser un fichier) */
+.depot {
+    display: inline-block;
+    padding: 12px;
+    font-size: 12px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+small {
+    font-size: 11px;
+    color: #555;
+}
+
+/* bouton du bas */
+.valider {
+    text-align: center;
+    margin-top: 28px;
+}
+
+button {
+    padding: 14px 34px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, #e94560, #c62a47);
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 6px 16px rgba(233, 69, 96, 0.4);
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* petits écrans : les champs se mettent l'un sous l'autre */
+@media (max-width: 520px) {
+    .ligne {
+        flex-direction: column;
+        gap: 0;
+    }
+}
